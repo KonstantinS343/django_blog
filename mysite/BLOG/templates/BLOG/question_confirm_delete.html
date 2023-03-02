@@ -1,0 +1,14 @@
+{% extends "BLOG/base.html" %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="lened-delete">Удаление записи</legend>
+            <h2>Вы уверены, что хотите удалить эту запись?</h2>
+        </fieldset>
+        <div class="form-group">
+            <button class="post-button" type="submit">Да, хочу удалить</button>
+            <a class="link-read-more" href="{% url 'post' object.slug %}">Отмена</a>
+        </div>
+    </form>
+{% endblock content %}

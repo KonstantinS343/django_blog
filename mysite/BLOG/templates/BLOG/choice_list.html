@@ -1,0 +1,23 @@
+{% load blog_tags %}
+
+<div class = "wrapper">
+    <div class="content-section">
+      <ul class="list-group">
+        <li class="list-name">Разделы</li>
+          {%if cat_selected == 0%}
+            <li class="list-group-item-choice">Главная</li>
+          {%else%}
+            <li class="list-group-item"><a href="{% url 'home' %}">Главная</a></li>
+          {%endif%}
+        {%for item in cats%}
+          {% if item.question__count > 0%}
+            {%if cat_selected == item.pk%}
+              <li class="list-group-item-choice">{{item.name}}</li>
+            {%else%}
+              <li class="list-group-item"><a href="{{item.get_absolute_url}}">{{item.name}}</a></li>
+            {%endif%}
+          {% endif %}
+        {%endfor%}
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+{% extends 'BLOG/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<form method = "post">
+    {% csrf_token %}
+
+    {% for item in form %}
+        <p class = "form"><label class = "form-label" for = "{{item.id_for_label}}">{{item.label}}: </label> {{item}} </p>
+        <div class = "errors">{{item.errors}}</div>
+    {% endfor %}
+    <div class = "errors">{{form.non_field_errors}}</div>
+    <button class = "post-button" type="submit">Войти</button>
+</form>
+{% endblock %}

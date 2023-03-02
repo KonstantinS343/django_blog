@@ -1,0 +1,375 @@
+body,
+html {
+ width:100%;
+ height:100%
+}
+
+body {
+  margin:0;
+  padding:0;
+  background: white;
+  color: #333333;
+  font-family:Roboto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contain{
+    flex: 1 0 auto;
+}
+
+.bi-eye{
+    margin-right: 10px;
+}
+
+.bi-bug{
+    
+    font-size: 60px;
+    color:white;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none; 
+    color: white;
+}
+
+.collapse{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,144,223,1) 49%, rgba(0,212,255,1) 100%);
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.site-header{
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-home{
+    font-size: 30px;
+    padding-right: 50px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+    margin-right: 20px;
+}
+.nav-item, .nav-item-profile{
+    margin-right: 10px;
+}
+
+.nav-item-profile{
+    text-decoration: underline;
+}
+
+.wrapper{
+    font-size: 20px;
+    width: 25%;
+    padding: 70px;
+    padding-right: 140px;
+    position: sticky;
+    top: 75px;
+    float: right;
+    background-color: white;
+}
+.cont{
+    margin-right: auto;
+    margin-left: 50px;
+    margin-top: 120px;
+    max-width: 60%;
+
+}
+
+.cont li{
+    list-style-type: none;
+}
+
+.list-group {
+    list-style: none;
+    padding: 0;
+    border: 1px solid rgba(0,0,0, .2);
+    border-radius: 10px;
+}
+.list-group li {
+    overflow: hidden;
+    padding: 6px 10px;
+    font-size: 20px;
+}
+.list-group li:first-child {
+    font-weight: bold;
+    padding: 15px 0 10px 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0, .2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color:  #0790df;
+    font-size: 24px;
+    box-shadow: 0 10px 20px -5px rgba(0,0,0, .2);
+}
+.list-group li:first-child:before {
+    content: "\2749";
+    margin-right: 10px;
+}
+
+p.link-read-more{
+    text-align: right;
+}
+
+p.link-read-more a {
+    padding: 10px;
+    min-width: 100px;
+    background: #0790df;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.footer {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    background: #3F4137;
+    padding: 5px;
+    color: #aaa;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Arial, Helvetica;
+    text-align: center;
+    overflow: hidden;
+}
+.footer a {
+    text-decoration: underline;
+    color: #aaa;
+}
+
+.list-group-item a{
+    color: black;
+}
+
+.list-group-item-choice{
+    font-weight: bold;
+    padding: 15px 0 10px 15px;
+    border-bottom: 1px solid rgba(0,0,0, .2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color:  #0790df;
+    font-size: 24px;
+    box-shadow: 0 10px 20px -5px rgba(0,0,0, .2);
+}
+
+.more{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-content{
+    font-size: 17px;
+    word-wrap:break-word;
+}
+
+.inside-post{
+    width: 70%;
+}
+
+
+.head-post{
+    width: 100%;
+}
+
+.views-result{
+    color: gray;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.views{
+    display: flex;
+    align-items: center;
+}
+
+.panel-first{
+    color: gray;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.errors{
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form{
+    display: flex;
+    flex-flow: column wrap;
+    color: gray;
+}
+
+.form-input, .content-input, .cat-choice{
+    background: #FFFFFF;
+    border: 1.6px solid #A2A2A2;
+    box-sizing: border-box;
+    border-radius: 5%;
+    width: 100%;
+    min-height: 5px;
+    font-size: 22.4px;
+    line-height: 114%;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.cat-choice{
+    color: gray;
+}
+
+
+.post-button{
+    font-weight: 900;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 115%;
+    text-align: center;
+    outline: none;
+    border: 0;
+    padding: 12px 20px;
+    background: #0790df;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-right: 10%;
+}
+
+.user{
+    color: gray;
+    margin:0;
+    font-size: 50px;
+    margin-bottom: 100px;
+    text-decoration: underline;
+} 
+
+.user-outside{
+    color: gray;
+    margin:0;
+}
+
+h1, h2{
+    word-wrap:break-word;
+    width: 100%;
+}
+
+.list-pages {
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.list-pages ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+.list-pages ul li {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+.list-pages a {
+	color: #000;
+	font-size: 14px;
+	text-decoration: none;
+}
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	min-width: 2%;
+	height: 2%;
+	border: 1px solid #d0d0d0;
+	border-radius: 30px;
+}
+
+.page-num-selected {
+	border: none;
+	color: #000;
+	font-size: 20px;
+}
+
+.user-data{
+    color: gray;
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+.account-img{
+    float: left;
+    margin-right: 10%;
+    width: 200px;
+    border-radius: 100%;
+    height: 200px;   
+}
+
+.account-img-post{
+    float: left;
+    margin-right: 15px;
+    width: 150px;
+    border-radius: 100%;
+    height: 150px;   
+    margin-bottom: 10px;
+}
+
+.about-user {
+    display: grid;
+    margin-bottom: 20px;
+}
+
+.about-user .link-read-more{
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form-group a{
+    color:#000;
+}
+
+.form-group button{
+    margin-top: 20px;
+}
+
+.sort{
+    color: #000;
+    margin-right: 20px;
+}
+
+.search_button{
+    font-size: 16px;
+    color: black;
+    line-height: 115%;
+    text-align: center;
+    outline: none;
+    border: 0;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.search_input{
+    padding: 12px 20px;
+    border-radius: 12px;
+    line-height: 115%;
+}
+
+.post-title{
+    text-align: left;
+}
+
+.inside-post .link-read-more{
+    margin-bottom: 40px;
+}

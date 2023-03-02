@@ -1,0 +1,27 @@
+{% extends 'BLOG/base.html' %}
+{% load blog_tags %}
+
+{% block content %}
+    <img class="account-img-post" src="{{ post.author_post.profile.image.url }}">
+    <div class = "inside-post">
+        <div class = "more">
+            <p class = "panel">Категория: {{post.cat}}</p>
+            <p class = "panel">Дата публикации: {{post.pub_date|date:"d-m-Y H:i:s"}}</p>
+        </div>
+        <div class = "main-post">
+            <div class = "head-post">
+                <p class = "user">{{post.author_post|truncatechars:20}}</p>
+            </div>
+            <h1 class = "post-title">{{post.title}}</h1>
+            <span class = "post-content">{{post.content|linebreaks}}</span>
+        </div>
+        <p class = "views-result">          
+            Просмотры: {{post.get_views}}
+        </p>
+        {% if post.author_post == user %}
+            <p class = "link-read-more"><a href = "{% url 'update_post' post.slug %}">Редактировать</a></p>
+            <p class = "link-read-more"><a href = "{% url 'delete_post' post.slug %}">Удалить</a></p>
+            
+        {% endif %}
+    </div>
+{% endblock %}

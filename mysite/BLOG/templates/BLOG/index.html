@@ -1,0 +1,27 @@
+{% extends 'BLOG/base.html' %}
+
+
+{% block content %}
+    <ul  class = "posts">
+        {%for item in post%}
+            <li>
+                <div class="head-post">
+                    <h2 class = "post-title">{{item.title}}</h2>
+                    <p class = "user-outside">{{item.author_post}}</p>
+                </div>
+                <p>{{item.content|linebreaks|truncatechars:100}}</p>
+                <div class="more">
+                    <div class = "cat">
+                        <p class = "panel-first">Категория: {{item.cat}}</p>
+                    </div>
+                    <div class = "views">
+                        <i class="bi bi-eye"></i>
+                        <p class = "views-result">{{item.get_views}}</p>
+                        <p class = "link-read-more"><a href="{{item.get_absolute_url}}">Развернуть</a></p>
+                    </div>
+                </div>           
+                <hr>
+            </li>
+        {%endfor%}
+    </ul>
+{% endblock %}

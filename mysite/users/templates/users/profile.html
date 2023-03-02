@@ -1,0 +1,28 @@
+{% extends "BLOG/base.html" %}
+
+{% block content %}
+    <div class = "user-data-content">
+        <img class="account-img" src="{{ userdate.image.url }}">
+        <div class = "about-user">
+            <p class = "user-data">Имя пользователя: {{userdate.user.username}}</p>
+            <p class = "user-data">Email: {{userdate.user.email}}</p>
+            <p class = "link-read-more"><a href="{% url 'user_posts' userdate.slug%}">Мои записи</a></p>
+        </div>
+    </div>
+    <div>
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}   
+            <fieldset class="form-group">
+                <legend class="profile">Ваш профиль</legend>
+                {% for item in form_for_data %}
+                    <p class = "form"><label class = "form-label" for = "{{item.id_for_label}}">{{item.label}}: </label> {{item}} </p>
+                    <div class = "errors">{{item.errors}}</div>
+                {% endfor %}
+                    <div class = "errors">{{form.non_field_errors}}</div>
+                {{ form_for_image }}
+                <button class = "post-button" type="submit">Изменить</button>
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock content %}
