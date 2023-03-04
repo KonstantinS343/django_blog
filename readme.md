@@ -1,6 +1,13 @@
 ## **Установка зависимостей**
     python3 -m pip install -r requirements.txt
 
+## **Установка проекта**
+    git clone https://github.com/KonstantinS343/django_blog.git
+
+## **Запуск проекта**
+    cd django_blog/mysite
+    python3 manage.py runserver
+
 ## **Описание проекта**
 
 Проект написан на фреймворке **Django 4.1.5** и **Python 3.8.10**.
