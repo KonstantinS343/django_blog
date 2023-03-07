@@ -24,7 +24,14 @@ class HomeView(DataMixin, generic.ListView):
         context = super().get_context_data(**kwargs)
         user_context = self.get_user_context_data(show_cats=True)
         return dict(list(context.items()) + list(user_context.items()))
-
+    
+    def get_queryset(self):
+        '''Формирует список для отображения.'''
+        
+        try:
+            return Question.objects.select_related('cat').select_related('author_post')
+        except BaseException:
+            raise Http404()
 
 def about(request):
     '''Отображает страницу с информацией о сайте.'''
@@ -57,7 +64,7 @@ class Categories(DataMixin, generic.ListView):
         '''Формирует список для отображения.'''
         
         try:
-            return Question.objects.filter(cat_id=self.kwargs['cat_id'])
+            return Question.objects.filter(cat_id=self.kwargs['cat_id']).select_related('cat').select_related('author_post')
         except BaseException:
             raise Http404()
 
@@ -129,7 +136,7 @@ class Search(DataMixin, generic.ListView):
         '''Формирует список для отображения.'''
         
         return Question.objects.filter(
-            title__contains=self.request.GET.get('search'))
+            title__contains=self.request.GET.get('search')).select_related('cat')
 
 
 class UpdatePost(UserPassesTestMixin, generic.UpdateView):
@@ -181,7 +188,7 @@ class UserPosts(DataMixin, generic.ListView):
 
     def get_queryset(self):
         '''Формирует список для отображения.'''
-        return Question.objects.filter(author_post=self.request.user)
+        return Question.objects.filter(author_post=self.request.user).select_related('cat').select_related('author_post')
 
 
 def PageNotFound(request, exception):

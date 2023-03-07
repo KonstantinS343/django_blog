@@ -18,7 +18,7 @@ def get_user(user):
     '''Пользовательский тег, который возвращает информацию о пользователе.'''
     
     try:
-        return Profile.objects.get(user = user)
+        return Profile.objects.select_related('user').get(user = user)
     except BaseException:
         raise Http404()
     
