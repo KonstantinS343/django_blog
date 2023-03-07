@@ -207,8 +207,6 @@ p.link-read-more a {
 }
 
 .form{
-    display: flex;
-    flex-flow: column wrap;
     color: gray;
 }
 
@@ -216,7 +214,6 @@ p.link-read-more a {
     background: #FFFFFF;
     border: 1.6px solid #A2A2A2;
     box-sizing: border-box;
-    border-radius: 5%;
     width: 100%;
     min-height: 5px;
     font-size: 22.4px;

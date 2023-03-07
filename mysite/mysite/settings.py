@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'BLOG.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'captcha',
     "debug_toolbar",
 ]
 
@@ -137,3 +138,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+#Cache
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'blog_cache'),
+    }
+}

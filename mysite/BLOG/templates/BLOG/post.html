@@ -4,6 +4,8 @@
 {% block content %}
     <img class="account-img-post" src="{{ post.author_post.profile.image.url }}">
     <div class = "inside-post">
+        {% load cache %}
+        {% cache 60 content %}
         <div class = "more">
             <p class = "panel">Категория: {{post.cat}}</p>
             <p class = "panel">Дата публикации: {{post.pub_date|date:"d-m-Y H:i:s"}}</p>
@@ -15,6 +17,7 @@
             <h1 class = "post-title">{{post.title}}</h1>
             <span class = "post-content">{{post.content|linebreaks}}</span>
         </div>
+        {%endcache%}
         <p class = "views-result">          
             Просмотры: {{post.get_views}}
         </p>

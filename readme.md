@@ -6,6 +6,7 @@
 
 ## **Запуск проекта**
     cd django_blog/mysite
+    mkdir blog_cache
     python3 manage.py runserver
 
 ## **Описание проекта**
