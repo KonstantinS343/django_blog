@@ -1,5 +1,5 @@
 ## **Установка зависимостей**
-    python3 -m pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt 
 
 ## **Установка проекта**
     git clone https://github.com/KonstantinS343/django_blog.git
